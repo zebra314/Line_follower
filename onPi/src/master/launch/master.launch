@@ -1,5 +1,6 @@
 <launch>
+    <!-- <node name = 'launcher' pkg = 'detector' type = 'Launcher.py' output = 'screen'/> -->
     <node name = 'img_capture' pkg = 'img_capture' type = 'Img_capture.py' output = 'screen'/>
     <node name = 'line_detector' pkg = 'detector' type = 'Line_detector.py' output = 'screen'/>
-    <node name = 'terminator' pkg = 'detector' type = 'Terminator.py' output = 'screen'/>
+    <!-- <node name = 'terminator' pkg = 'detector' type = 'Terminator.py' output = 'screen'/> -->
 </launch>

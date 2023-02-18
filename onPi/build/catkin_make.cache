@@ -1,2 +1,2 @@
-detector:img_capture:master
+detector:img_capture:master:toarduino
 -DCATKIN_DEVEL_PREFIX=/home/alfonso/Line_follower/onPi/devel -DCMAKE_INSTALL_PREFIX=/home/alfonso/Line_follower/onPi/install -G Unix Makefiles

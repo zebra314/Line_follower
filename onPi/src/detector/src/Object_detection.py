@@ -91,7 +91,7 @@ class ObjectDetection:
         frame = self.plot_boxes(results, frame)
 
         if str(results[0]) == 'tensor([])':
-            status = 'keep'
+            status = 'stay'
         else :
-            status = 'stop'
+            status = 'start'
         return status, frame

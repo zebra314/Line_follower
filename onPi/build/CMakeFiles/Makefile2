@@ -55,6 +55,7 @@ CMAKE_BINARY_DIR = /home/alfonso/Line_follower/onPi/build
 # The main recursive "all" target.
 all: gtest/all
 all: master/all
+all: toarduino/all
 all: detector/all
 all: img_capture/all
 
@@ -63,6 +64,7 @@ all: img_capture/all
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
 preinstall: master/preinstall
+preinstall: toarduino/preinstall
 preinstall: detector/preinstall
 preinstall: img_capture/preinstall
 
@@ -76,6 +78,7 @@ clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
 clean: master/clean
+clean: toarduino/clean
 clean: detector/clean
 clean: img_capture/clean
 
@@ -204,6 +207,24 @@ master/clean: master/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 master/clean: master/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 .PHONY : master/clean
+
+#=============================================================================
+# Directory level rules for directory toarduino
+
+# Recursive "all" directory target.
+toarduino/all:
+
+.PHONY : toarduino/all
+
+# Recursive "preinstall" directory target.
+toarduino/preinstall:
+
+.PHONY : toarduino/preinstall
+
+# Recursive "clean" directory target.
+toarduino/clean:
+
+.PHONY : toarduino/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
@@ -344,8 +365,8 @@ CMakeFiles/download_extra_data.dir/clean:
 # Target rules for target gtest/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmock.dir/all
+gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfonso/Line_follower/onPi/build/CMakeFiles --progress-num=3,4 "Built target gmock_main"

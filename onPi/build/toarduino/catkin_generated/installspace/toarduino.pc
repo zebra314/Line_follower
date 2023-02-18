@@ -1,0 +1,8 @@
+prefix=/home/alfonso/Line_follower/onPi/install
+
+Name: toarduino
+Description: Description of toarduino
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

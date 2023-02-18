@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/alfonso/Line_follower/devel;/home/alfonso/catkin_ws/devel_isolated/test_mavros;/home/alfonso/catkin_ws/devel_isolated/mavros_extras;/home/alfonso/catkin_ws/devel_isolated/mavros;/home/alfonso/catkin_ws/devel_isolated/mavros_msgs;/home/alfonso/catkin_ws/devel_isolated/libmavconn;/opt/ros/noetic;/home/alfonso/catkin_ws/devel_isolated/mavlink'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/alfonso/Line_follower/onPi/devel;/home/alfonso/catkin_ws/devel_isolated/test_mavros;/home/alfonso/catkin_ws/devel_isolated/mavros_extras;/home/alfonso/catkin_ws/devel_isolated/mavros;/home/alfonso/catkin_ws/devel_isolated/mavros_msgs;/home/alfonso/catkin_ws/devel_isolated/libmavconn;/opt/ros/noetic;/home/alfonso/catkin_ws/devel_isolated/mavlink'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

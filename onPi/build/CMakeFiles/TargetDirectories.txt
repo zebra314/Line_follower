@@ -47,6 +47,13 @@
 /home/alfonso/Line_follower/onPi/build/master/CMakeFiles/list_install_components.dir
 /home/alfonso/Line_follower/onPi/build/master/CMakeFiles/rebuild_cache.dir
 /home/alfonso/Line_follower/onPi/build/master/CMakeFiles/std_msgs_generate_messages_cpp.dir
+/home/alfonso/Line_follower/onPi/build/toarduino/CMakeFiles/install/strip.dir
+/home/alfonso/Line_follower/onPi/build/toarduino/CMakeFiles/install/local.dir
+/home/alfonso/Line_follower/onPi/build/toarduino/CMakeFiles/install.dir
+/home/alfonso/Line_follower/onPi/build/toarduino/CMakeFiles/list_install_components.dir
+/home/alfonso/Line_follower/onPi/build/toarduino/CMakeFiles/rebuild_cache.dir
+/home/alfonso/Line_follower/onPi/build/toarduino/CMakeFiles/edit_cache.dir
+/home/alfonso/Line_follower/onPi/build/toarduino/CMakeFiles/test.dir
 /home/alfonso/Line_follower/onPi/build/detector/CMakeFiles/install/strip.dir
 /home/alfonso/Line_follower/onPi/build/detector/CMakeFiles/list_install_components.dir
 /home/alfonso/Line_follower/onPi/build/detector/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
