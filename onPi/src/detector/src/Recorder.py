@@ -33,7 +33,7 @@ class Recorder:
         # cwd = os.getcwd() # current working directory
         # self.path = cwd + '/video/'
         name = os.getlogin()
-        self.path = '/home/' + name + '/Desktop/Test_record/'
+        self.path = '/home/' + name + '/Line_follower/asset/videos/'
         
         isExist = os.path.exists(self.path) 
         if not isExist:
