@@ -1,0 +1,8 @@
+prefix=/home/alfonso/Line_follower/onPi/devel
+
+Name: detector
+Description: Description of detector
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

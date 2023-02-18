@@ -1,0 +1,8 @@
+prefix=/home/alfonso/Line_follower/onPi/install
+
+Name: img_capture
+Description: Description of img_capture
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
