@@ -22,8 +22,8 @@ class ObjectDetection:
         :return: Trained Pytorch model.
         """
         username = os.getlogin()
-        yolo_path = '/home/' + str(username) + '/Desktop/yolov5'
-        weight_path = '/home/' + str(username) + '/Desktop/weights/endgame.pt'
+        yolo_path = '/home/' + str(username) + '/Line_follower/asset/yolov5'
+        weight_path = '/home/' + str(username) + '/Line_follower/weights/endgame.pt'
         model = torch.hub.load(yolo_path, 'custom', source = 'local', path = weight_path) # fill location of the .pt file in path
         # beside the .pt file at he path
         # there also need to be a yolov5 dir which is clone from the offical github
