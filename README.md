@@ -34,6 +34,9 @@ endbox
 
 ## Devlog
 
+> 2/20
+> Update line detect
+
 > 2/19  
 > Test Rasberry pi 
 
