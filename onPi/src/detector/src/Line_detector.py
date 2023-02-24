@@ -38,9 +38,8 @@ class Line_detector:
         """
         Execute when receiving the msg from camera topic
         
-        :ori_frame: 
-            1. ROS communication format.
-            2. The original frame capture from the camera.
+        :ori_frame: In ROS communication format. It's the original frame captured from the camera.
+        :frame: In RGB format.
         """
         frame = self.trans_format(ori_frame)
         frame_processed = self.img_process(frame)
@@ -77,6 +76,9 @@ class Line_detector:
         print('\nline_detector stop\n')
     
     def trans_format(self, frame):
+        """
+        Transform the format of the image from ROS communication to RGB format.
+        """
         # 格式轉換
         frame = self.bridge.imgmsg_to_cv2(frame, 'bgr8')
         return frame
@@ -198,7 +200,7 @@ class Line_detector:
 
         return frame
 
-    def plot_position(self, frame):
+    def elses(self, frame):
         # # 兩位小數
         # self.offset = round( (cX_mid - (W/2))/(W/2)*100 , 2)
         
@@ -227,8 +229,6 @@ class Line_detector:
         #         #cv2.line(inputImage,(x1,y1),(x2,y2),(0,128,0),2, cv2.LINE_AA)
         #         pts = np.array([[x1, y1 ], [x2 , y2]], np.int32)
         #         cv2.polylines(frame, [pts], True, (0,255,0))
-
-        return frame
         
 if __name__ == "__main__":
     line_detector = Line_detector()
