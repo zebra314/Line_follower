@@ -49,3 +49,9 @@ endbox
 ## ToDo
 > Check if the Arduino receieve the msg  
 > Optimize the line detector 
+
+##　Reference
+
+[Canny](https://blog.csdn.net/sunny2038/article/details/9202641)
+[HoughLines](https://blog.csdn.net/dcrmg/article/details/78880046)
+[HoughLines vs HoughLinesP](https://blog.csdn.net/ftimes/article/details/106816736)
