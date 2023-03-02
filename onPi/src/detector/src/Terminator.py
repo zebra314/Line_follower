@@ -10,6 +10,9 @@ from Object_detection import ObjectDetection
 from Recorder import Recorder
 
 class Terminator:
+    """
+    This class is just created for testing shutdown the node by an event.
+    """
     def __init__(self):
         self.objectDetection = ObjectDetection()
         self.bridge = CvBridge()       

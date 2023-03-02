@@ -5,7 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-subdirs("master")
 subdirs("toarduino")
+subdirs("camera")
 subdirs("detector")
-subdirs("img_capture")
