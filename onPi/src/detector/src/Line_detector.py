@@ -9,7 +9,16 @@ class Line_detector:
     Class to detect the line and calculate the percentage of the offset.
     """
     def __init__(self):
-        pass
+
+        # PID setting
+        self.P = 0
+        self.I = 0
+        self.D = 0
+        self.Kp = 0.07
+        self.Ki = 0.0008
+        self.Kd = 0.6
+        self.ideal = 0
+        self.lastError = 0
 
     def __call__(self, frame):
         frame_process = self.img_process(frame)
@@ -138,12 +147,23 @@ class Line_detector:
 
         return frame
 
+    def PID(self, frame):
+        error = self.ideal - self.position; 
+        self.P = error
+        self.I = self.I + error
+        self.D = error - self.lastError
+        self.lastError = error
+
+        # calculate the correction
+        motorspeed = self.P * self.Kp + self.I * self.Ki + self.D * self.Kd
+
+        # return motorspeed
+
+    
     def Hough(self, frame):
         """
-        To detect two type of line
-        HoughLines settings
+        To detect straight and curve lines using HoughLine algorithm 
         """
-
         # Detect straight lines
         rho = 1 # distance accuracy
         theta = np.pi/180 # angle accuracy
