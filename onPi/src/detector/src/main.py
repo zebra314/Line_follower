@@ -58,8 +58,8 @@ class detector:
         cv2.waitKey(1) & 0xFF
 
     def signal_handler(self):
-        self.recorder1.writer.release()
-        self.recorder2.writer.release()
+        # self.recorder1.writer.release()
+        # self.recorder2.writer.release()
 
         cv2.destroyAllWindows()
         print('\nline_detector stop\n')
