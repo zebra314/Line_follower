@@ -5,30 +5,34 @@ The robot runs ROS on Raspberry Pi, using usb camera and opencv library to detec
 and an Arduino to control the wheels by PID.
 
 ## Architecture
-![Architecture](/asset/images/Line_follower%20sys%20structure.png)
+![Architecture](/asset/images/Architecture.png)
 
 ``` c
 @startuml
 !pragma teoz true
-Master -> Line_detector : launch
-Master -> Terminator : launch
-Master -> Img_capture : launch
-Master -> Toarduino : launch
-Terminator -> Line_detector : shutdown
-Terminator -> Img_capture : shutdown
-Terminator -> Toarduino : shutdown
+
+camera -> main : image
+Object_detector -> main : import
+Line_detector -> main : import
+Recorder -> main : import
+main -> toarduino : pwm_msg
+toarduino -> motor_controll : pwm_msg
+motor_controll -> wheels : pwm
 
 box "ROS NODES"
-  participant Master
-  participant Img_capture
-  participant Toarduino
-  participant Terminator
-  participant Line_detector
+  participant camera
     box "detector"
-      participant Terminator
+      participant Object_detector
       participant Line_detector
+      participant Recorder
+      participant main
     endbox
+  participant toarduino
 endbox
+
+box "ARDUINO"
+  participant motor_controll
+  participant wheels
 @enduml
 ```
 
