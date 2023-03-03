@@ -17,8 +17,8 @@ class detector:
         rospy.init_node('detector')
         self.pub = rospy.Publisher('/offset', String, queue_size = 1)
         self.bridge = CvBridge()
-        self.recorder1 = Recorder('camera')
-        self.recorder2 = Recorder('convert')
+        # self.recorder1 = Recorder('camera')
+        # self.recorder2 = Recorder('convert')
         self.line_detector = Line_detector()
         # self.object_detector = Object_detector()
 
@@ -44,8 +44,8 @@ class detector:
         frame_convert = self.line_detector(frame_cv2.copy())
 
         # Record the frame
-        self.recorder1(frame_cv2)
-        self.recorder2(frame_convert)
+        # self.recorder1(frame_cv2)
+        # self.recorder2(frame_convert)
 
         # Do not use imshow if your operating system is Ubuntu Server
         # cv2.imshow('camera', frame_cv2)
