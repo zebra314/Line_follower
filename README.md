@@ -38,6 +38,12 @@ box "ARDUINO"
 
 ## Devlog
 
+> 3/3  
+> Fuck up raspberry
+
+> 3/2  
+> PID controll
+
 > 2/20  
 > Update line detect
 
@@ -51,11 +57,12 @@ box "ARDUINO"
 > Line detect and camera pkg  
 
 ## ToDo
+> Adjust PID parameters  
 > Check if the Arduino receieve the msg  
 > Optimize the line detector 
 
-##　Reference
+## Reference
 
-[Canny](https://blog.csdn.net/sunny2038/article/details/9202641)
-[HoughLines](https://blog.csdn.net/dcrmg/article/details/78880046)
+[Canny](https://blog.csdn.net/sunny2038/article/details/9202641)  
+[HoughLines](https://blog.csdn.net/dcrmg/article/details/78880046)  
 [HoughLines vs HoughLinesP](https://blog.csdn.net/ftimes/article/details/106816736)
