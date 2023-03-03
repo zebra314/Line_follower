@@ -14,14 +14,14 @@ class Line_detector:
         self.P = 0
         self.I = 0
         self.D = 0
-        self.Kp = 0.07
+        self.Kp = 0.5
         self.Ki = 0.0008
         self.Kd = 0.6
         self.ideal = 0
         self.lastError = 0
 
         # motor speed
-        self.motorSpeed = 30
+        self.motorSpeed = 55
 
     def __call__(self, frame):
         frame_process = self.img_process(frame)
@@ -153,37 +153,29 @@ class Line_detector:
         frame = cv2.line(frame, (int(cX_mid), int(cY_mid)), (int(cX_top2), int(cY_top2)),yellow,2)
 
         return frame
-
+    
     def PID(self):
 
         # right offset error > 0
         # left offeset error > 0 
-        error = (self.ideal - self.position) 
-
+        error = (self.ideal - self.position)*100/(self.ideal)
+        # print(error)
         self.P = error
         # self.I = self.I + error
         self.D = error - self.lastError
         self.lastError = error
 
         # calculate the correction
-        motorspeed = self.P * self.Kp + self.D * self.Kd # + self.I * self.Ki
-        
+        motorspeed = -1*self.P * self.Kp # + self.D * self.Kd # + self.I * self.Ki
+
         leftspeed = int(self.motorSpeed - motorspeed)
         rightspeed = int(self.motorSpeed + motorspeed)
 
-        if leftspeed > 60:
-            leftspeed = 60
-        elif leftspeed < 0:
-            leftspeed = 0
-        
-        if rightspeed > 60:
-            rightspeed = 60
-        elif rightspeed < 0:
-            rightspeed = 0
-
         stringspeed = str(leftspeed) + ' ' + str(rightspeed)
+        print(stringspeed)
         return stringspeed
-    
+
+
     def Hough(self, frame):
         """
         To detect straight and curve lines using HoughLine algorithm 
