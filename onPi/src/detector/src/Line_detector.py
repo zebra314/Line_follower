@@ -161,12 +161,12 @@ class Line_detector:
         error = (self.ideal - self.position) 
 
         self.P = error
-        self.I = self.I + error
+        # self.I = self.I + error
         self.D = error - self.lastError
         self.lastError = error
 
         # calculate the correction
-        motorspeed = self.P * self.Kp + self.I * self.Ki + self.D * self.Kd
+        motorspeed = self.P * self.Kp + self.D * self.Kd # + self.I * self.Ki
         
         leftspeed = int(self.motorSpeed - motorspeed)
         rightspeed = int(self.motorSpeed + motorspeed)

@@ -3,6 +3,7 @@
 import rospy
 import serial
 import signal
+from time import sleep
 from std_msgs.msg import String
 
 
@@ -13,7 +14,7 @@ class Toarduino:
         # connect to arduino board
         self.ser = serial.Serial('/dev/ttyUSB0',57600)
         self.ser.timeout = 2.5
-        print('arduino connected')  
+        print('\narduino connected\n')  
     
     def __call__(self):
         rospy.Subscriber('/offset', String, self.sub_offset, queue_size = 1)
@@ -25,10 +26,11 @@ class Toarduino:
     def sub_offset(self, msg):
         # send the msg to arduino
         self.ser.write(bytes(str(msg.data), 'utf-8'))
+        sleep(2)
     
     def signal_handler(self):
         self.ser.close()
-        print('\nToarduino stop')
+        print('\nToarduino stop\n')
 
 
 if __name__ == '__main__':
