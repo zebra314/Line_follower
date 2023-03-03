@@ -48,8 +48,8 @@ class detector:
         self.recorder2(frame_convert)
 
         # Do not use imshow if your operating system is Ubuntu Server
-        cv2.imshow('camera', frame_cv2)
-        cv2.imshow('convert', frame_convert)
+        # cv2.imshow('camera', frame_cv2)
+        # cv2.imshow('convert', frame_convert)
 
         # pub function only execute here
         # it will not execute in __call__ function

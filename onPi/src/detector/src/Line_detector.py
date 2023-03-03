@@ -21,7 +21,7 @@ class Line_detector:
         self.lastError = 0
 
         # motor speed
-        self.motorSpeed = 60
+        self.motorSpeed = 30
 
     def __call__(self, frame):
         frame_process = self.img_process(frame)
@@ -171,13 +171,13 @@ class Line_detector:
         leftspeed = int(self.motorSpeed - motorspeed)
         rightspeed = int(self.motorSpeed + motorspeed)
 
-        if leftspeed > 255:
-            leftspeed = 255
+        if leftspeed > 60:
+            leftspeed = 60
         elif leftspeed < 0:
             leftspeed = 0
         
-        if rightspeed > 255:
-            rightspeed = 255
+        if rightspeed > 60:
+            rightspeed = 60
         elif rightspeed < 0:
             rightspeed = 0
 
