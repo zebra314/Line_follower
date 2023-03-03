@@ -157,7 +157,7 @@ class Line_detector:
     def PID(self):
 
         # right offset error > 0
-        # left offeset error > 0 
+        # left offeset error < 0 
         error = (self.ideal - self.position)*100/(self.ideal)
         # print(error)
         self.P = error
@@ -166,7 +166,7 @@ class Line_detector:
         self.lastError = error
 
         # calculate the correction
-        motorspeed = -1*self.P * self.Kp # + self.D * self.Kd # + self.I * self.Ki
+        motorspeed = self.P * self.Kp # + self.D * self.Kd # + self.I * self.Ki
 
         leftspeed = int(self.motorSpeed - motorspeed)
         rightspeed = int(self.motorSpeed + motorspeed)
