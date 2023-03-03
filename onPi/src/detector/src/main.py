@@ -6,7 +6,6 @@ import signal
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
-
 from Line_detector import Line_detector
 from Recorder import Recorder
 from Object_detector import Object_detector
