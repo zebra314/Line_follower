@@ -20,6 +20,9 @@ class Line_detector:
         self.ideal = 0
         self.lastError = 0
 
+        # motor speed
+        self.motorSpeed = 60
+
     def __call__(self, frame):
         frame_process = self.img_process(frame)
 
@@ -142,13 +145,21 @@ class Line_detector:
             cY_mid = int(M_mid["m01"] / M_mid["m00"])+ int(H/3)
         frame = cv2.circle(frame, (int(cX_mid), int(cY_mid)), 5, yellow, -1)
 
+        # calculate the current position
+        self.ideal = W/2
+        self.position = cX_mid
+
         # connect point mid and center 
         frame = cv2.line(frame, (int(cX_mid), int(cY_mid)), (int(cX_top2), int(cY_top2)),yellow,2)
 
         return frame
 
-    def PID(self, frame):
-        error = self.ideal - self.position; 
+    def PID(self):
+
+        # right offset error > 0
+        # left offeset error > 0 
+        error = (self.ideal - self.position) 
+
         self.P = error
         self.I = self.I + error
         self.D = error - self.lastError
@@ -156,9 +167,22 @@ class Line_detector:
 
         # calculate the correction
         motorspeed = self.P * self.Kp + self.I * self.Ki + self.D * self.Kd
+        
+        leftspeed = int(self.motorSpeed - motorspeed)
+        rightspeed = int(self.motorSpeed + motorspeed)
 
-        # return motorspeed
+        if leftspeed > 255:
+            leftspeed = 255
+        elif leftspeed < 0:
+            leftspeed = 0
+        
+        if rightspeed > 255:
+            rightspeed = 255
+        elif rightspeed < 0:
+            rightspeed = 0
 
+        stringspeed = str(leftspeed) + ' ' + str(rightspeed)
+        return stringspeed
     
     def Hough(self, frame):
         """

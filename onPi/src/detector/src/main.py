@@ -48,14 +48,15 @@ class detector:
         self.recorder2(frame_convert)
 
         # Do not use imshow if your operating system is Ubuntu Server
-        # cv2.imshow('camera', frame_cv2)
-        # cv2.imshow('convert', frame_convert)
+        cv2.imshow('camera', frame_cv2)
+        cv2.imshow('convert', frame_convert)
 
         # pub function only execute here
         # it will not execute in __call__ function
         # I don't know why
-        self.pub.publish(str(self.offset))
-        cv2.waitKey(1)
+        motorspeed = self.line_detector.PID()
+        self.pub.publish(str(motorspeed))
+        cv2.waitKey(1) & 0xFF
 
     def signal_handler(self):
         self.recorder1.writer.release()
