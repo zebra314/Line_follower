@@ -27,7 +27,7 @@ class Camera:
     def talker(self):
         while not rospy.is_shutdown():
             ret, frame = self.cap.read()
-            if not ret or cv2.waitKey(1) & 0xFF == ord('q'): 
+            if not ret : 
                 break
             msg = self.bridge.cv2_to_imgmsg(frame, 'bgr8')
             self.pub.publish(msg)
