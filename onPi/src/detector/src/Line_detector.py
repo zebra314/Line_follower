@@ -9,14 +9,15 @@ class Line_detector:
     Detect the line in the frame.
     Input a single frame and output points and contours in list format.
     """
-    def __init__(self):
+    def __init__(self, resolution = 16):
+        self.slice_num = resolution
         pass
     
     def __call__(self, frame):
-        frame_processed = self.img_process(frame)
+        frame_processed = self.img_process(frame, self.slice_num)
         return frame_processed
 
-    def img_process(self, frame, slice_num = 16):  
+    def img_process(self, frame, slice_num):  
         """
         :frame: BGR format
         """
@@ -80,3 +81,16 @@ class Line_detector:
         maskOpen = cv2.morphologyEx(frame,cv2.MORPH_OPEN,kernelOpen)
         maskClose = cv2.morphologyEx(maskOpen,cv2.MORPH_CLOSE,kernelClose)
         return maskClose
+    
+    def debug_img(self, frame, points, contours):
+        for i in contours:
+            cv2.drawContours(frame, i, -1, (0,0,255), 3)
+        for i in points:
+            frame = cv2.circle(frame, i, 6, (0,0,255), -1)
+
+        # (vx, vy) : vector
+        # (x, y) : point on the line 
+        vx, vy, x, y = cv2.fitLine(np.int32(points), cv2.DIST_L2, 0, 0.01, 0.01)
+        cv2.line(frame, (int(x+100*vx),int(y+100*vy)), (int(x),int(y)), (0, 255, 255), 3)
+
+        return frame
