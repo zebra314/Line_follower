@@ -3,6 +3,7 @@
 import rospy
 import cv2
 import signal
+import numpy as np
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
@@ -16,13 +17,9 @@ class detector:
         rospy.init_node('detector')
         self.pub = rospy.Publisher('/offset', String, queue_size = 1)
         self.bridge = CvBridge()
-        # self.recorder1 = Recorder('camera')
-        # self.recorder2 = Recorder('convert')
-        self.line_detector = Line_detector()
+        self.line_detector = Line_detector(resolution = 16)
         # self.object_detector = Object_detector()
-
-        self.offset = 0
-        
+        # self.recorder= Recorder('convert')
         rate = rospy.Rate(10)
     
     def __call__(self):
@@ -40,24 +37,22 @@ class detector:
 
         # Transform the format of the frame
         frame_cv2 = self.bridge.imgmsg_to_cv2(frame, 'bgr8')
-        frame_convert = self.line_detector(frame_cv2.copy())
+
+        # Detect the line
+        points, contours = self.line_detector(frame_cv2.copy())
+
+        # Show debug image 
+        frame_plot = self.line_detector.debug_img(frame_cv2, points, contours)
+        cv2.imshow('frame_plot', frame_plot)
 
         # Record the frame
-        # self.recorder1(frame_cv2)
-        # self.recorder2(frame_convert)
+        # self.recorder(frame_convert)
 
-        # Do not use imshow if your operating system is Ubuntu Server
-        # cv2.imshow('camera', frame_cv2)
-        # cv2.imshow('convert', frame_convert)
-
-        # motorspeed = self.line_detector.PID()
         # self.pub.publish(str(motorspeed))
         cv2.waitKey(1) & 0xFF
 
     def signal_handler(self):
-        # self.recorder1.writer.release()
-        # self.recorder2.writer.release()
-
+        # self.recorder.writer.release()
         cv2.destroyAllWindows()
         print('\nline_detector stop\n')
     
