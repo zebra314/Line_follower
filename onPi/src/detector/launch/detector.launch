@@ -1,7 +1,7 @@
 <launch>
     <node name = 'detector' pkg = 'detector' type = 'main.py' output = 'screen'/>
     <node name = 'camera' pkg = 'camera' type = 'Camera.py' output = 'screen'/>
-    <node name = 'toarduino' pkg = 'toarduino' type = 'Toarduino.py' output = 'screen'/>
+    <!-- <node name = 'toarduino' pkg = 'toarduino' type = 'Toarduino.py' output = 'screen'/> -->
     <!-- <node name = 'launcher' pkg = 'detector' type = 'Launcher.py' output = 'screen'/> -->
     <!-- <node name = 'line_detector' pkg = 'detector' type = 'Line_detector.py' output = 'screen'/> -->
     <!-- <node name = 'terminator' pkg = 'detector' type = 'Terminator.py' output = 'screen'/> -->
