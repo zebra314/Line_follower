@@ -38,6 +38,9 @@ box "ARDUINO"
 
 ## Devlog
 
+> 3/5
+> Optimize line detect
+
 > 3/3  
 > Fuck up raspberry
 
@@ -66,3 +69,4 @@ box "ARDUINO"
 [Canny](https://blog.csdn.net/sunny2038/article/details/9202641)  
 [HoughLines](https://blog.csdn.net/dcrmg/article/details/78880046)  
 [HoughLines vs HoughLinesP](https://blog.csdn.net/ftimes/article/details/106816736)
+[Line detect algorithm](https://hackmd.io/@0xff07/cv-tracking)
