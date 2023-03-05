@@ -5,11 +5,16 @@ import numpy as np
 
 
 class Line_detector:
+    """
+    Detect the line in the frame.
+    Input a single frame and output points and contours in list format.
+    """
     def __init__(self):
         pass
+    
     def __call__(self, frame):
-        frame_process = self.img_process(frame)
-        return frame
+        frame_processed = self.img_process(frame)
+        return frame_processed
 
     def img_process(self, frame, slice_num = 16):  
         """
@@ -28,14 +33,11 @@ class Line_detector:
 
         # Morphological transformation
         frame_morpho = self.MorphoTrans(frame_threshold)
-
+        
+        # Find contours in each slice
         for i in range(0, slice_num) :
             frame_sliced = frame_morpho[X_DIV*i + 1:X_DIV*(i+1), int(0):int(IMG_WIDTH)]
-
-            # Find contours
-            conts,_ = cv2.findContours(frame_sliced.copy(),\
-                      cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
-            
+            conts,_ = cv2.findContours(frame_sliced.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
             if(conts):
                 c = max(conts, key = cv2.contourArea)
                 M = cv2.moments(c)
@@ -47,20 +49,7 @@ class Line_detector:
 
         contours = [i for i in detected_contours if i is not None]
         points = [i for i in poly_points if i is not None]
-
-        for i in contours:
-            cv2.drawContours(frame, i, -1, (0,0,255), 3)
-        for i in points:
-            frame = cv2.circle(frame, i, 6, (0,0,255), -1)
-
-        # vx, vy : slope
-        # x, y : point on the line 
-        vx, vy, x, y = cv2.fitLine(np.int32(points), cv2.DIST_L2, 0, 0.01, 0.01)
-        cv2.line(frame, (int(x+100*vx),int(y+100*vy)), (int(x),int(y)), (0, 255, 255), 3)
-
-        cv2.imshow('frame', frame)
-        return frame
-        # return points, contours
+        return points, contours
 
     def threshold_custom(self, frame):
         """
