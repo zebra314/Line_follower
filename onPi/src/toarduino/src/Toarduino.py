@@ -26,7 +26,7 @@ class Toarduino:
     def sub_offset(self, msg):
         # send the msg to arduino
         self.ser.write(bytes(str(msg.data), 'utf-8'))
-        sleep(2)
+        sleep(1)
     
     def signal_handler(self):
         self.ser.close()
