@@ -11,9 +11,33 @@ class Coachman:
         self.ctrl = 0
         self.ctrl_last = 0
         self.pid = PID([1000, 16, 200])
+        self.normal_speed = 50
     
     def __call__(self, frame, path, poly):
+        """
+        :return: frame and motorspeed
+        """
         self.IMG_HEIGHT, self.IMG_WIDTH = frame.shape[:2]
+
+        if len(path) == 0:
+            print('No line detected.')
+            self.ctrl = 0
+            return frame, self.ctrl
+
+        # Check if the line detected correctly
+        frame_convexHull, noiseFound = self.convexhull_check(frame.copy(), path) 
+
+        if not noiseFound:
+            self.ctrl = self.ctrl_last
+            print('Noise detected.')
+        else :
+            self.ctrl = self.speed_get(path)
+            self.ctrl_last = self.ctrl
+            # print('Line Detected.')
+        
+        motorspeed = str(self.normal_speed + int(self.ctrl)) + ' ' + str(self.normal_speed - int(self.ctrl))
+        return frame_convexHull, motorspeed
+        
 
     def evaluate_function(self, angle_part, translate_part, x, y):
         x = abs(x)
@@ -21,55 +45,40 @@ class Coachman:
         (1 - 1.*x/self.IMG_WIDTH/2.0)*angle_part +
         1.*x/self.IMG_WIDTH/2.0 * translate_part)
     
-    def convexhull_check(self, path, poly):
-        if not len(path) == 0:
-            n = len(path)
-            hull = cv2.convexHull(np.array(path)) # 最後 return 出去
-            area = cv2.contourArea(hull)
-            AREA = self.IMG_HEIGHT * self.IMG_WIDTH
-            # print(area/1./AREA)
+    def convexhull_check(self, frame, path):
+        """
+        :return: frame
+        """
+        hull = cv2.convexHull(np.array(path)) 
+        area = cv2.contourArea(hull)
+        AREA = self.IMG_HEIGHT * self.IMG_WIDTH
+        cv2.drawContours(frame, [hull], 0, (0, 255, 0), 1)
 
-            if AREA / 80 < area:
-                ctrl = ctrl_last
-                # print("Noise Detected ! ! !")
-                # cv2.drawContours(img,[hull],0,(0,0,255),-1)
-            else:
-                curve_cm = [0, 0]
-                for i in range(0, len(path)):
-                    curve_cm[0] += 1.*path[i][0]/len(path)
-                    curve_cm[1] += 1.*path[i][1]/len(path)
+        # print(area/AREA)
+        if (area/AREA) > 0.2:
+            return frame, False
+        else :
+            return frame, True
 
-                vec_sec = [path[0][0]-path[n-1][0], path[0][1]-path[n-1][1]]
-                ang_sec = 90 - np.angle(vec_sec[0] - vec_sec[1] * 1J, deg=True)
+    def speed_get(self, path):
+        n = len(path)
+        curve_cm = [0, 0]
+        for i in range(0, len(path)):
+            curve_cm[0] += 1.*path[i][0]/len(path)
+            curve_cm[1] += 1.*path[i][1]/len(path)
 
-                translate_part = 90 - np.interp(curve_cm[0], [0, self.IMG_WIDTH], [180, 0])
-                angle_part = ang_sec
+        vec_sec = [path[0][0]-path[n-1][0], path[0][1]-path[n-1][1]]
+        ang_sec = 90 - np.angle(vec_sec[0] - vec_sec[1] * 1J, deg=True)
 
-                ctrl_estimate = self.evaluate_function(angle_part, translate_part, \
-                                curve_cm[0] - self.IMG_WIDTH/2.0, self.IMG_HEIGHT - curve_cm[1])
+        translate_part = 90 - np.interp(curve_cm[0], [0, self.IMG_WIDTH], [180, 0])
+        angle_part = ang_sec
 
-                self.pid.step(ctrl_estimate)
-                ctrl = self.pid.get_ctrl()
+        ctrl_estimate = self.evaluate_function(angle_part, translate_part, \
+                        curve_cm[0] - self.IMG_WIDTH/2.0, self.IMG_HEIGHT - curve_cm[1])
 
-                if abs(ctrl -  ctrl_last) < 2:
-                    no_flip  += 1
-                else:
-                    no_flip = 0
-                accelerate = no_flip / 30
-                ctrl_last = ctrl
-
-                # print("Translate Part : " + str(translate_part))
-                # print("Angle Part : " + str(angle_part))
-                # print("flip no : " + str(no_flip))
-                # print("ctrl : " + str(ctrl))
-                # print("dist : " + str(dist))
-                # cv2.drawContours(img,[hull],0,(255,0,0),-1)
-
-                # for i in range(len(path) - 1):
-                    # cv2.line(img, path[i] ,path[i + 1],(0, 255, 0),5)
-                # for i in range(len(poly) - 1):
-                    # cv2.drawContours(img,poly[i],0,(255,0,0),1)            
-                # cv2.imshow("cam",img)            
+        self.pid.step(ctrl_estimate)
+        ctrl = self.pid.get_ctrl()
+        return ctrl
 
 class PID:
     def __init__(self, KPID, QUEUE_SIZE = 2000):
