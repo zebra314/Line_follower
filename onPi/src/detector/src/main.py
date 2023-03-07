@@ -21,7 +21,7 @@ class detector:
         self.line_detector = Line_detector(resolution = 16)
         self.coachman = Coachman()
         # self.object_detector = Object_detector()
-        # self.recorder= Recorder('convert')
+        self.recorder= Recorder('convert')
         rate = rospy.Rate(10)
     
     def __call__(self):
@@ -41,28 +41,20 @@ class detector:
         frame_cv2 = self.bridge.imgmsg_to_cv2(frame, 'bgr8')
 
         # Detect the line
-        points, contours = self.line_detector(frame_cv2.copy())
+        frame_lineDetected, points, contours = self.line_detector(frame_cv2.copy())
 
-        # Show debug image 
-        for i in contours:
-            cv2.drawContours(frame_cv2, i, -1, (0,0,255), 3)
-        for i in points:
-            frame_cv2 = cv2.circle(frame_cv2, i, 6, (0,0,255), -1)
-        # (vx, vy) : vector
-        # (x, y) : point on the line 
-        vx, vy, x, y = cv2.fitLine(np.int32(points), cv2.DIST_L2, 0, 0.01, 0.01)
-        cv2.line(frame, (int(x+100*vx),int(y+100*vy)), (int(x),int(y)), (0, 255, 255), 3)
-        frame_plot = self.line_detector.debug_img(frame_cv2, points, contours)
-        cv2.imshow('frame_plot', frame_plot)
+        # Controll the motor
+        frame_hullDetected,  motorspeed = self.coachman(frame_lineDetected, points, contours)
+        # cv2.imshow('frame_hullDetected', frame_hullDetected)
 
         # Record the frame
-        # self.recorder(frame_convert)
+        self.recorder(frame_hullDetected)
 
-        # self.pub.publish(str(motorspeed))
+        self.pub.publish(str(motorspeed))
         cv2.waitKey(1) & 0xFF
 
     def signal_handler(self):
-        # self.recorder.writer.release()
+        self.recorder.writer.release()
         self.pub.publish('0 0')
         cv2.destroyAllWindows()
         print('\nline_detector stop\n')
