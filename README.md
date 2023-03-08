@@ -5,7 +5,7 @@ The robot runs ROS on Raspberry Pi, using usb camera and opencv library to detec
 and an Arduino to control the wheels by PID.
 
 ## Architecture
-![Architecture](/asset/images/Architecture_3.png)
+![Architecture](/asset/images/Architecture_4.png)
 
 ``` c
 @startuml
@@ -13,17 +13,18 @@ and an Arduino to control the wheels by PID.
 
 camera -> Line_detector : img
 Line_detector -> Coachman : img, contours, points
-Coachman -> Recorder : img
 Coachman -> toarduino : pwm_msg
+camera -> recorder : img
+Coachman -> recorder : img
 toarduino -> motor_controll : pwm_msg
 motor_controll -> wheels : pwm
 
 box "ROS NODES"
   participant camera
+  participant recorder
     box "detector"
       participant Line_detector
       participant Coachman
-      participant Recorder
     endbox
   participant toarduino
 endbox
@@ -38,6 +39,7 @@ box "ARDUINO"
 
 > 3/8  
 > Optimize motor controll  
+> Add recorder node 
 
 > 3/5  
 > Optimize line detect
