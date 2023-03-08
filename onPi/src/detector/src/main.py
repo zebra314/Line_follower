@@ -9,20 +9,19 @@ from sensor_msgs.msg import Image
 from std_msgs.msg import String
 from Line_detector import Line_detector
 from Coachman import Coachman
-from Recorder import Recorder
-from Object_detector import Object_detector
+# from Object_detector import Object_detector
 
 
 class detector:
     def __init__(self):
         rospy.init_node('detector')
-        self.pub = rospy.Publisher('/offset', String, queue_size = 1)
+        self.pub_offset = rospy.Publisher('/offset', String, queue_size = 1)
+        self.pub_hullDetected = rospy.Publisher('/hullDetected', Image, queue_size = 1)
         self.bridge = CvBridge()
         self.line_detector = Line_detector(resolution = 16)
         self.coachman = Coachman()
         # self.object_detector = Object_detector()
-        self.recorder= Recorder('convert')
-        rate = rospy.Rate(10)
+        # rate = rospy.Rate(10)
     
     def __call__(self):
         rospy.Subscriber('/image', Image, self.sub_camera, queue_size = 1, buff_size = 52428800)
@@ -45,12 +44,10 @@ class detector:
 
         # Controll the motor
         frame_hullDetected,  motorspeed = self.coachman(frame_lineDetected, points, contours)
-        # cv2.imshow('frame_hullDetected', frame_hullDetected)
 
-        # Record the frame
-        self.recorder(frame_hullDetected)
-
-        self.pub.publish(str(motorspeed))
+        frame_hullDetected = self.bridge.cv2_to_imgmsg(frame_hullDetected, 'bgr8')
+        self.pub_hullDetected.publish(frame_hullDetected)
+        self.pub_offset.publish(str(motorspeed))
         cv2.waitKey(1) & 0xFF
 
     def signal_handler(self):
