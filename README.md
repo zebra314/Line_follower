@@ -37,6 +37,23 @@ box "ARDUINO"
 @enduml
 ```
 
+## Commands
+
+1. To launch 
+```bash
+roslaunch detector detector.launch 
+```
+  
+2. To view the image
+```bash
+rqt_image_view
+```
+
+3. To view the node graph
+```bash
+rosrun rqt_graph rqt_graph
+```
+
 ## Devlog
 
 > 3/8  
