@@ -6,6 +6,8 @@ and an Arduino to control the wheels by PID.
 
 ## Architecture
 ![Architecture](/asset/images/Architecture_4.png)
+  
+![Architecture](/asset/images/rosgraph_1.png)
 
 ``` c
 @startuml
