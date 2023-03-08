@@ -20,7 +20,7 @@ class Coachman:
         self.IMG_HEIGHT, self.IMG_WIDTH = frame.shape[:2]
 
         if len(path) == 0:
-            print('No line detected.')
+            # print('No line detected.')
             self.ctrl = 0
             return frame, self.ctrl
 
@@ -29,7 +29,7 @@ class Coachman:
 
         if not noiseFound:
             self.ctrl = self.ctrl_last
-            print('Noise detected.')
+            # print('Noise detected.')
         else :
             self.ctrl = self.speed_get(path)
             self.ctrl_last = self.ctrl
