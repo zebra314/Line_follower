@@ -41,13 +41,34 @@ int TRGB;
 
 Timer T;
 
-void msg_process(String msg){
-  
+
+  void msg_process(String msg){
+  String a, b;
+  bool flag = false;
   int left, right;
-  
+  left = 0;
+  right = 0;
+  for(int i = 0;i<msg.length(); i++){
+    if(msg[i] == ' '){
+      flag = true;
+      i++;
+    }
+    if(flag == false){
+      a+=msg[i];
+    }else {
+      b+=msg[i];
+    }
+  }
+  for(int i = a.length()-1, j=0; i>=0; i--, j++){
+    left +=int(a[i]-'0')*pow(10, j);
+  } 
+  for(int i = b.length()-1, j=0; i>=0; i--, j++){
+    right +=int(b[i]-'0')*pow(10, j);
+  }
   TR_L = left;
   TR_R = right;
 }
+
 
 void readEncoder1(){
   int b = digitalRead(ENCB1);
@@ -131,13 +152,18 @@ void controller(){
 
   motor_controll(VO_L, VO_R);
 }
-
+void PID_controller(){
+  int VO_R,VO_L;
+  int e_R,e_L;
+  e_R = TR_R - pos_R;
+  e_L = TR_L - pos_L;
+  
+  motor_controll(VO_L, VO_R);
+}
 void speed(){
   newtime = millis();
   spd_R = (pos_R-posd_R) * 1000 /(newtime-oldtime);
   spd_L = (pos_L-posd_L) * 1000 /(newtime-oldtime);
-  Serial.print ("speed = ");
-  Serial.println (spd_R);
   posd_R = pos_R;
   posd_L = pos_L;
   oldtime = newtime;
