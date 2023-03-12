@@ -12,7 +12,7 @@ class Toarduino:
         rospy.init_node('Toarduino')
 
         # connect to arduino board
-        self.ser = serial.Serial('/dev/ttyUSB0',57600)
+        self.ser = serial.Serial('/dev/ttyUSB0',9600)
         self.ser.timeout = 2.5
         print('\narduino connected\n')  
     
@@ -26,12 +26,14 @@ class Toarduino:
     def sub_offset(self, msg):
         # send the msg to arduino
         self.ser.write(bytes(str(msg.data), 'utf-8'))
-        sleep(1)
+        arduino_echo = ''
+        while arduino_echo == '' :
+            arduino_echo = self.ser.readline().decode('utf').strip()
+        print(arduino_echo)
     
     def signal_handler(self):
         self.ser.close()
         print('\nToarduino stop\n')
-
 
 if __name__ == '__main__':
     toarduino = Toarduino()
