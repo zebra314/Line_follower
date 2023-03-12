@@ -13,9 +13,9 @@ class Camera:
         self.cap = cv2.VideoCapture(self.camera_id)
 
         if self.cap.isOpened():
-            print('Camera is connected.')
+            print('\nCamera connected.\n')
         else :
-            print('Camera is not connected.')
+            print('\nCamera not connected.\n')
 
         self.bridge = CvBridge()
         
@@ -35,7 +35,7 @@ class Camera:
         cv2.destroyAllWindows()
     
 if __name__ == '__main__':
-    camera = Camera(0)
+    camera = Camera(2)
     try:
         camera.talker()
     except rospy.ROSInterruptException:
