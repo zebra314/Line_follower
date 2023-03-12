@@ -2,6 +2,6 @@
     <node name = 'detector' pkg = 'detector' type = 'main.py' output = 'screen'/>
     <node name = 'camera' pkg = 'camera' type = 'Camera.py' output = 'screen'/>
     <node name = 'recorder' pkg = 'recorder' type = 'Recorder.py' output = 'screen'/>
-    <!-- <node name = 'toarduino' pkg = 'toarduino' type = 'Toarduino.py' output = 'screen'/> -->
+    <node name = 'toarduino' pkg = 'toarduino' type = 'Toarduino.py' output = 'screen'/>
     <!-- <node name = 'terminator' pkg = 'detector' type = 'Terminator.py' output = 'screen'/> -->
 </launch>
