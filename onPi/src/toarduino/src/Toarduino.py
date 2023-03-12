@@ -4,6 +4,7 @@ import rospy
 import serial
 import signal
 from std_msgs.msg import String
+from time import sleep
 
 
 class Toarduino:

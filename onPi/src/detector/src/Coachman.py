@@ -11,7 +11,7 @@ class Coachman:
         self.ctrl = 0
         self.ctrl_last = 0
         self.pid = PID([1000, 16, 200])
-        self.normal_speed = 60
+        self.normal_speed = 50
     
     def __call__(self, frame, path, poly):
         """
@@ -35,7 +35,7 @@ class Coachman:
             self.ctrl_last = self.ctrl
             # print('Line Detected.')
         
-        motorspeed = str(self.normal_speed + int(self.ctrl)) + ' ' + str(self.normal_speed - int(self.ctrl))
+        motorspeed =  str(self.normal_speed - int(self.ctrl)) + ' ' + str(self.normal_speed + int(self.ctrl))
         return frame_convexHull, motorspeed
         
 
