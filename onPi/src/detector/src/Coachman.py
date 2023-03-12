@@ -11,7 +11,7 @@ class Coachman:
         self.ctrl = 0
         self.ctrl_last = 0
         self.pid = PID([1000, 16, 200])
-        self.normal_speed = 50
+        self.normal_speed = 60
     
     def __call__(self, frame, path, poly):
         """
