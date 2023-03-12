@@ -1,0 +1,6 @@
+{
+    "port": "/dev/ttyUSB0",
+    "board": "arduino:avr:uno",
+    "programmer": "usbasp",
+    "sketch": "onArdu/Line_follower/Line_follower.ino"
+}

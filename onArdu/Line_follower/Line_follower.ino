@@ -41,8 +41,7 @@ int TRGB;
 
 Timer T;
 
-
-  void msg_process(String msg){
+void msg_process(String msg){
   String a, b;
   bool flag = false;
   int left, right;
@@ -69,7 +68,6 @@ Timer T;
   TR_R = right;
 }
 
-
 void readEncoder1(){
   int b = digitalRead(ENCB1);
   
@@ -95,61 +93,49 @@ void motor_controll(int VO_L, int VO_R){
   int way_R=0;
   int L_V;
   int R_V;
-  
+ 
   L_V = abs(VO_L);
   R_V = abs(VO_R);
   way_L = VO_L/L_V;
   way_R = VO_R/R_V;
-
-  switch(way_L){//0後退 1左轉 2右轉 3前進 4停止
+  
+  switch(way_L){ //0後退 1左轉 2右轉 3前進 4停止
     case -1:
       digitalWrite(L_1, HIGH);
       digitalWrite(L_2, LOW);
-
       break;
     case 0:
       digitalWrite(L_1, LOW);
       digitalWrite(L_2, LOW);
-
       break;
     case 1:
       digitalWrite(L_1, LOW);
       digitalWrite(L_2, HIGH);
-
       break;
   }
-  switch(way_R){//0後退 1左轉 2右轉 3前進 4停止
+  switch(way_R){ //0後退 1左轉 2右轉 3前進 4停止
     case -1:
       digitalWrite(R_1, HIGH);
       digitalWrite(R_2, LOW);
-
       break;
     case 0:
       digitalWrite(R_1, LOW);
       digitalWrite(R_2, LOW);
-
       break;
     case 1:
       digitalWrite(R_1, LOW);
       digitalWrite(R_2, HIGH);
-
       break;
-
   }
-  
   analogWrite(L_pwm, L_V);
   analogWrite(R_pwm, R_V);
-  
 }
 
 void controller(){
-  
-
   int VO_R = 0;
   int VO_L = 0;
   VO_L = TR_L;
   VO_R = TR_R;
-
   motor_controll(VO_L, VO_R);
 }
 void PID_controller(){
@@ -157,7 +143,6 @@ void PID_controller(){
   int e_R,e_L;
   e_R = TR_R - pos_R;
   e_L = TR_L - pos_L;
-  
   motor_controll(VO_L, VO_R);
 }
 void speed(){
@@ -172,43 +157,37 @@ void speed(){
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  pinMode(LED,OUTPUT);
-  
+  pinMode(LED,OUTPUT);  
   pinMode(L_1,OUTPUT);
   pinMode(L_2,OUTPUT);
   pinMode(R_1,OUTPUT);
   pinMode(R_2,OUTPUT);
-  
   pinMode(L_pwm,OUTPUT);
   pinMode(R_pwm,OUTPUT);
-  
   pinMode(ENCA1,INPUT);
   pinMode(ENCA2,INPUT);
   pinMode(ENCB1,INPUT);
   pinMode(ENCB2,INPUT);
-
   attachInterrupt(digitalPinToInterrupt(ENCA1),readEncoder1,RISING);
   attachInterrupt(digitalPinToInterrupt(ENCA2),readEncoder2,RISING);
-  
   digitalWrite(LED, HIGH);
   delay(1000);
   digitalWrite(LED, LOW);
-  
 }
 
 void loop() {
-
   if (Serial.available() > 0){
     message = Serial.readString();
     msg_process(message);
-    Serial.println(message);
     digitalWrite(LED, HIGH);
-    delay(100);
+    controller(); 
+    delay(150);
+    motor_controll(0,0);
+    Serial.println(message);
   }
-  else{digitalWrite(LED, LOW);}
-
-  T.update();
-  speed();
-  
-  controller();
+  else
+  {
+    digitalWrite(LED, LOW);
+    motor_controll(0,0);
+  }
 }
