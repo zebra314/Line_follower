@@ -136,8 +136,8 @@ void speed(){
   newtime = millis();
   spd_R = (pos_R-posd_R) * 1000 /(newtime-oldtime);
   spd_L = (pos_L-posd_L) * 1000 /(newtime-oldtime);
-  Serial.print ("speed = ");
-  Serial.println (spd_R);
+  // Serial.print ("speed = ");
+  // Serial.println (spd_R);
   posd_R = pos_R;
   posd_L = pos_L;
   oldtime = newtime;

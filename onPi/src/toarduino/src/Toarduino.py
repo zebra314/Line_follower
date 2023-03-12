@@ -3,7 +3,6 @@
 import rospy
 import serial
 import signal
-from time import sleep
 from std_msgs.msg import String
 
 
