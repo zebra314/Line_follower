@@ -2,8 +2,9 @@
 
 ## Brief
 The robot runs ROS on Raspberry Pi, using usb camera and opencv library to detect the line
-and an Arduino to control the wheels by PID.
+and an Arduino to control the wheels by PID.  
 
+![Body](/asset/images/robot.jpg)  
 ## Architecture
 ![Architecture](/asset/images/Architecture_4.png)
   
@@ -54,7 +55,18 @@ rqt_image_view
 rosrun rqt_graph rqt_graph
 ```
 
+4. To upload to ardunio
+```bash
+cd ~/Line_follower/onArdu/Line_follower
+make upload clean
+```
+
 ## Devlog
+
+> 3/13   
+> Test on Pi  
+> Couldn't reduce the period from arduino echo to the new msg arrived    
+> It might caused by the while in toarduino.py for waiting the arduino echo  
 
 > 3/8  
 > Optimize motor controll  
@@ -82,6 +94,7 @@ rosrun rqt_graph rqt_graph
 > Line detect and camera pkg  
 
 ## ToDo
+> Tweak motor speed  
 > Test on Pi  
 > Adjust PID parameters  
 > Check if the Arduino receieve the msg  
@@ -92,4 +105,5 @@ rosrun rqt_graph rqt_graph
 [Canny](https://blog.csdn.net/sunny2038/article/details/9202641)  
 [HoughLines](https://blog.csdn.net/dcrmg/article/details/78880046)  
 [HoughLines vs HoughLinesP](https://blog.csdn.net/ftimes/article/details/106816736)  
-[Line detect algorithm](https://hackmd.io/@0xff07/cv-tracking)
+[Line detect algorithm](https://hackmd.io/@0xff07/cv-tracking)  
+[Upload to arduino using terminal](https://www.youtube.com/watch?v=qAM2S27FWAI)
