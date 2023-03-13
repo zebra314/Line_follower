@@ -11,7 +11,7 @@ class Coachman:
         self.ctrl = 0
         self.ctrl_last = 0
         self.pid = PID([1000, 16, 200])
-        self.normal_speed = 50
+        self.normal_speed = 60
     
     def __call__(self, frame, path, poly):
         """
@@ -25,9 +25,9 @@ class Coachman:
             return frame, self.ctrl
 
         # Check if the line detected correctly
-        frame_convexHull, noiseFound = self.convexhull_check(frame.copy(), path) 
+        frame_convexHull, Clear = self.convexhull_check(frame.copy(), path) 
 
-        if not noiseFound:
+        if not Clear:
             self.ctrl = self.ctrl_last
             # print('Noise detected.')
         else :
@@ -35,7 +35,8 @@ class Coachman:
             self.ctrl_last = self.ctrl
             # print('Line Detected.')
         
-        motorspeed =  str(self.normal_speed - int(self.ctrl)) + ' ' + str(self.normal_speed + int(self.ctrl))
+        reviser = min(int(self.ctrl), 30) if self.ctrl else max(int(self.ctrl),-30)
+        motorspeed =  str(self.normal_speed - reviser) + ' ' + str(self.normal_speed + reviser)
         return frame_convexHull, motorspeed
         
 

@@ -1,6 +1,7 @@
 {
     "port": "/dev/ttyUSB0",
-    "board": "arduino:avr:uno",
+    "board": "arduino:avr:mega",
     "programmer": "usbasp",
-    "sketch": "onArdu/Line_follower/Line_follower.ino"
+    "sketch": "onArdu/Line_follower/Line_follower.ino",
+    "configuration": "cpu=atmega2560"
 }
