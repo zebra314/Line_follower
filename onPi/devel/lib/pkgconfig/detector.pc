@@ -1,4 +1,4 @@
-prefix=/home/alfonso/Line_follower/onPi/devel
+prefix=/home/pi/Line_follower/onPi/devel
 
 Name: detector
 Description: Description of detector

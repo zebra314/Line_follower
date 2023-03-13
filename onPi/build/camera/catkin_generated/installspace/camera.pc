@@ -1,4 +1,4 @@
-prefix=/home/alfonso/Line_follower/onPi/install
+prefix=/home/pi/Line_follower/onPi/install
 
 Name: camera
 Description: Description of camera

@@ -7,6 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/home/alfonso/Line_follower/onPi/devel/lib:/home/alfonso/catkin_ws/devel_isolated/test_mavros/lib:/home/alfonso/catkin_ws/devel_isolated/mavros_extras/lib:/home/alfonso/catkin_ws/devel_isolated/mavros/lib:/home/alfonso/catkin_ws/devel_isolated/mavros_msgs/lib:/home/alfonso/catkin_ws/devel_isolated/libmavconn/lib:/opt/ros/noetic/lib:/home/alfonso/catkin_ws/devel_isolated/mavlink/lib'
-export PATH='/opt/ros/noetic/bin:/home/alfonso/gems/bin:/home/alfonso/gems/bin:/usr/local/cuda-11.7/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/alfonso/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
-export PWD='/home/alfonso/Line_follower/onPi/build'
+export LD_LIBRARY_PATH='/opt/ros/noetic/lib'
+export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig'
+export PWD='/home/pi/Line_follower/onPi/build'
+export ROS_PACKAGE_PATH='/home/pi/Line_follower/onPi/src:/opt/ros/noetic/share'

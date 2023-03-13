@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alfonso/Line_follower/onPi/src
+CMAKE_SOURCE_DIR = /home/pi/Line_follower/onPi/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alfonso/Line_follower/onPi/build
+CMAKE_BINARY_DIR = /home/pi/Line_follower/onPi/build
 
 # Utility rule file for sensor_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build: sensor_msgs_gene
 .PHONY : camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 
 camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
-	cd /home/alfonso/Line_follower/onPi/build/camera && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/pi/Line_follower/onPi/build/camera && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 
 camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend:
-	cd /home/alfonso/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alfonso/Line_follower/onPi/src /home/alfonso/Line_follower/onPi/src/camera /home/alfonso/Line_follower/onPi/build /home/alfonso/Line_follower/onPi/build/camera /home/alfonso/Line_follower/onPi/build/camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Line_follower/onPi/src /home/pi/Line_follower/onPi/src/camera /home/pi/Line_follower/onPi/build /home/pi/Line_follower/onPi/build/camera /home/pi/Line_follower/onPi/build/camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
 

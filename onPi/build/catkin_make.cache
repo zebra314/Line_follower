@@ -1,2 +1,2 @@
-camera:detector:toarduino
--DCATKIN_DEVEL_PREFIX=/home/alfonso/Line_follower/onPi/devel -DCMAKE_INSTALL_PREFIX=/home/alfonso/Line_follower/onPi/install -G Unix Makefiles
+camera:detector:recorder:toarduino
+-DCATKIN_DEVEL_PREFIX=/home/pi/Line_follower/onPi/devel -DCMAKE_INSTALL_PREFIX=/home/pi/Line_follower/onPi/install -G Unix Makefiles

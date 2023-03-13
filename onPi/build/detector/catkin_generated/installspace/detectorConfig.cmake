@@ -67,14 +67,14 @@ set(detector_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(detector_SOURCE_PREFIX /home/alfonso/Line_follower/onPi/src/detector)
-  set(detector_DEVEL_PREFIX /home/alfonso/Line_follower/onPi/devel)
+  set(detector_SOURCE_PREFIX /home/pi/Line_follower/onPi/src/detector)
+  set(detector_DEVEL_PREFIX /home/pi/Line_follower/onPi/devel)
   set(detector_INSTALL_PREFIX "")
   set(detector_PREFIX ${detector_DEVEL_PREFIX})
 else()
   set(detector_SOURCE_PREFIX "")
   set(detector_DEVEL_PREFIX "")
-  set(detector_INSTALL_PREFIX /home/alfonso/Line_follower/onPi/install)
+  set(detector_INSTALL_PREFIX /home/pi/Line_follower/onPi/install)
   set(detector_PREFIX ${detector_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/alfonso/Line_follower/onPi/install/lib;/home/alfonso/Line_follower/onPi/devel/lib;/home/alfonso/catkin_ws/devel_isolated/test_mavros/lib;/home/alfonso/catkin_ws/devel_isolated/mavros_extras/lib;/home/alfonso/catkin_ws/devel_isolated/mavros/lib;/home/alfonso/catkin_ws/devel_isolated/mavros_msgs/lib;/home/alfonso/catkin_ws/devel_isolated/libmavconn/lib;/opt/ros/noetic/lib)
+    foreach(path /home/pi/Line_follower/onPi/install/lib;/home/pi/Line_follower/onPi/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -12,9 +12,9 @@ class Toarduino:
         rospy.init_node('Toarduino')
 
         # connect to arduino board
-        self.ser = serial.Serial('/dev/ttyUSB0',9600)
+        self.ser = serial.Serial('/dev/ttyUSB0',115200)
         self.ser.timeout = 2.5
-        print('\narduino connected\n')  
+        print('\nArduino connected.\n')  
     
     def __call__(self):
         rospy.Subscriber('/offset', String, self.sub_offset, queue_size = 1)

@@ -44,11 +44,11 @@ class detector:
 
         # Controll the motor
         frame_hullDetected,  motorspeed = self.coachman(frame_lineDetected, points, contours)
+        self.pub_offset.publish(str(motorspeed))
 
         frame_hullDetected = self.bridge.cv2_to_imgmsg(frame_hullDetected, 'bgr8')
         self.pub_hullDetected.publish(frame_hullDetected)
-        self.pub_offset.publish(str(motorspeed))
-        cv2.waitKey(1) & 0xFF
+        cv2.waitKey(1)
 
     def signal_handler(self):
         self.recorder.writer.release()

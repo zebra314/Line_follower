@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alfonso/Line_follower/onPi/src
+CMAKE_SOURCE_DIR = /home/pi/Line_follower/onPi/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alfonso/Line_follower/onPi/build
+CMAKE_BINARY_DIR = /home/pi/Line_follower/onPi/build
 
 # Utility rule file for rosgraph_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ camera/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build: rosgraph_msgs_ge
 .PHONY : camera/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 
 camera/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
-	cd /home/alfonso/Line_follower/onPi/build/camera && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/pi/Line_follower/onPi/build/camera && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : camera/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 
 camera/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend:
-	cd /home/alfonso/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alfonso/Line_follower/onPi/src /home/alfonso/Line_follower/onPi/src/camera /home/alfonso/Line_follower/onPi/build /home/alfonso/Line_follower/onPi/build/camera /home/alfonso/Line_follower/onPi/build/camera/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Line_follower/onPi/src /home/pi/Line_follower/onPi/src/camera /home/pi/Line_follower/onPi/build /home/pi/Line_follower/onPi/build/camera /home/pi/Line_follower/onPi/build/camera/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : camera/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
 

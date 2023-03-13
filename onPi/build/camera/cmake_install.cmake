@@ -1,8 +1,8 @@
-# Install script for directory: /home/alfonso/Line_follower/onPi/src/camera
+# Install script for directory: /home/pi/Line_follower/onPi/src/camera
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/alfonso/Line_follower/onPi/install")
+  set(CMAKE_INSTALL_PREFIX "/home/pi/Line_follower/onPi/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/alfonso/Line_follower/onPi/build/camera/catkin_generated/installspace/camera.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/pi/Line_follower/onPi/build/camera/catkin_generated/installspace/camera.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera/cmake" TYPE FILE FILES
-    "/home/alfonso/Line_follower/onPi/build/camera/catkin_generated/installspace/cameraConfig.cmake"
-    "/home/alfonso/Line_follower/onPi/build/camera/catkin_generated/installspace/cameraConfig-version.cmake"
+    "/home/pi/Line_follower/onPi/build/camera/catkin_generated/installspace/cameraConfig.cmake"
+    "/home/pi/Line_follower/onPi/build/camera/catkin_generated/installspace/cameraConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera" TYPE FILE FILES "/home/alfonso/Line_follower/onPi/src/camera/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera" TYPE FILE FILES "/home/pi/Line_follower/onPi/src/camera/package.xml")
 endif()
 

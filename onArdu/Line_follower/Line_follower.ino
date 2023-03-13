@@ -83,7 +83,7 @@ void motor_controll(int VO_L, int VO_R){
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(115200);
   pinMode(LED,OUTPUT);  
   pinMode(L_1,OUTPUT);
   pinMode(L_2,OUTPUT);
@@ -106,9 +106,8 @@ void loop() {
     msg_process(message);
     digitalWrite(LED, HIGH);
     motor_controll(TR_L, TR_R);
-    delay(150);
-    motor_controll(0,0);
     Serial.println(message);
+    delay(50);
   } else{
     digitalWrite(LED, LOW);
     motor_controll(0,0);
