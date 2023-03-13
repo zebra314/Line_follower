@@ -1,4 +1,3 @@
-#include "Timer.h"
 #define L_1  26
 #define L_2  28
 #define R_1  30
@@ -18,8 +17,6 @@ long posd_L = 0;
 bool phase1_R = false;
 bool phase1_L = false;
 bool check1 = true;
-unsigned long newtime;
-unsigned long oldtime = 0;
 int START_LAG_L = 0;
 int START_LAG_R = 0;
 int KEEP_LAG_L = 0;
@@ -34,8 +31,6 @@ int TR_R = 0;
 int TR_L = 0;
 
 String message;
-
-Timer T;
 
 void msg_process(String msg){
   String a, b;
