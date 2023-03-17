@@ -35,7 +35,7 @@ class Camera:
         cv2.destroyAllWindows()
     
 if __name__ == '__main__':
-    camera = Camera(0)
+    camera = Camera(2)
     try:
         camera.talker()
     except rospy.ROSInterruptException:
