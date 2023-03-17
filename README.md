@@ -8,7 +8,7 @@ and an Arduino to control the wheels by PID.
 ## Architecture
 ![Architecture](/asset/images/Architecture_4.png)
   
-![Architecture](/asset/images/rosgraph_1.png)
+![Architecture](/asset/images/rosgraph_2.png)
 
 ``` c
 @startuml
@@ -62,6 +62,9 @@ make upload clean
 ```
 
 ## Devlog
+
+> 3/17  
+> Fix uart delay problem  
 
 > 3/13   
 > Test on Pi  
