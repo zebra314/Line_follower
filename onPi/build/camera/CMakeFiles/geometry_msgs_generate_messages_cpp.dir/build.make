@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Line_follower/onPi/src
+CMAKE_SOURCE_DIR = /home/alfonso/Line_follower/onPi/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Line_follower/onPi/build
+CMAKE_BINARY_DIR = /home/alfonso/Line_follower/onPi/build
 
 # Utility rule file for geometry_msgs_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build: geometry_msgs_g
 .PHONY : camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 
 camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
-	cd /home/pi/Line_follower/onPi/build/camera && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/alfonso/Line_follower/onPi/build/camera && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 
 camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend:
-	cd /home/pi/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Line_follower/onPi/src /home/pi/Line_follower/onPi/src/camera /home/pi/Line_follower/onPi/build /home/pi/Line_follower/onPi/build/camera /home/pi/Line_follower/onPi/build/camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alfonso/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alfonso/Line_follower/onPi/src /home/alfonso/Line_follower/onPi/src/camera /home/alfonso/Line_follower/onPi/build /home/alfonso/Line_follower/onPi/build/camera /home/alfonso/Line_follower/onPi/build/camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
 

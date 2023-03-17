@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Line_follower/onPi/src
+CMAKE_SOURCE_DIR = /home/alfonso/Line_follower/onPi/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Line_follower/onPi/build
+CMAKE_BINARY_DIR = /home/alfonso/Line_follower/onPi/build
 
 # Utility rule file for std_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ toarduino/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build: std_msgs_gener
 .PHONY : toarduino/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 
 toarduino/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/pi/Line_follower/onPi/build/toarduino && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/alfonso/Line_follower/onPi/build/toarduino && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : toarduino/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 
 toarduino/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/pi/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Line_follower/onPi/src /home/pi/Line_follower/onPi/src/toarduino /home/pi/Line_follower/onPi/build /home/pi/Line_follower/onPi/build/toarduino /home/pi/Line_follower/onPi/build/toarduino/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alfonso/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alfonso/Line_follower/onPi/src /home/alfonso/Line_follower/onPi/src/toarduino /home/alfonso/Line_follower/onPi/build /home/alfonso/Line_follower/onPi/build/toarduino /home/alfonso/Line_follower/onPi/build/toarduino/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : toarduino/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
 

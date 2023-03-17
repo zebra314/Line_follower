@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Line_follower/onPi/src
+CMAKE_SOURCE_DIR = /home/alfonso/Line_follower/onPi/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Line_follower/onPi/build
+CMAKE_BINARY_DIR = /home/alfonso/Line_follower/onPi/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/pi/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Line_follower/onPi/src /home/pi/Line_follower/onPi/src /home/pi/Line_follower/onPi/build /home/pi/Line_follower/onPi/build /home/pi/Line_follower/onPi/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alfonso/Line_follower/onPi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alfonso/Line_follower/onPi/src /home/alfonso/Line_follower/onPi/src /home/alfonso/Line_follower/onPi/build /home/alfonso/Line_follower/onPi/build /home/alfonso/Line_follower/onPi/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

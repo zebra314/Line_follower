@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/opt/ros/noetic/lib'
+export PATH='/opt/ros/noetic/bin:/home/alfonso/gems/bin:/home/alfonso/gems/bin:/usr/local/cuda-11.7/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/alfonso/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
 export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig'
-export PWD='/home/pi/Line_follower/onPi/build'
-export ROS_PACKAGE_PATH='/home/pi/Line_follower/onPi/src:/opt/ros/noetic/share'
+export PWD='/home/alfonso/Line_follower/onPi/build'
+export ROS_PACKAGE_PATH='/home/alfonso/Line_follower/onPi/src:/opt/ros/noetic/share'

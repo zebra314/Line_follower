@@ -67,14 +67,14 @@ set(toarduino_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(toarduino_SOURCE_PREFIX /home/pi/Line_follower/onPi/src/toarduino)
-  set(toarduino_DEVEL_PREFIX /home/pi/Line_follower/onPi/devel)
+  set(toarduino_SOURCE_PREFIX /home/alfonso/Line_follower/onPi/src/toarduino)
+  set(toarduino_DEVEL_PREFIX /home/alfonso/Line_follower/onPi/devel)
   set(toarduino_INSTALL_PREFIX "")
   set(toarduino_PREFIX ${toarduino_DEVEL_PREFIX})
 else()
   set(toarduino_SOURCE_PREFIX "")
   set(toarduino_DEVEL_PREFIX "")
-  set(toarduino_INSTALL_PREFIX /home/pi/Line_follower/onPi/install)
+  set(toarduino_INSTALL_PREFIX /home/alfonso/Line_follower/onPi/install)
   set(toarduino_PREFIX ${toarduino_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/pi/Line_follower/onPi/install/lib;/home/pi/Line_follower/onPi/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/alfonso/Line_follower/onPi/install/lib;/home/alfonso/Line_follower/onPi/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

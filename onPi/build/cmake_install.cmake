@@ -1,8 +1,8 @@
-# Install script for directory: /home/pi/Line_follower/onPi/src
+# Install script for directory: /home/alfonso/Line_follower/onPi/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/pi/Line_follower/onPi/install")
+  set(CMAKE_INSTALL_PREFIX "/home/alfonso/Line_follower/onPi/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,92 +49,92 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/Line_follower/onPi/install/_setup_util.py")
+   "/home/alfonso/Line_follower/onPi/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/Line_follower/onPi/install" TYPE PROGRAM FILES "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/alfonso/Line_follower/onPi/install" TYPE PROGRAM FILES "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/Line_follower/onPi/install/env.sh")
+   "/home/alfonso/Line_follower/onPi/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/Line_follower/onPi/install" TYPE PROGRAM FILES "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/alfonso/Line_follower/onPi/install" TYPE PROGRAM FILES "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/Line_follower/onPi/install/setup.bash;/home/pi/Line_follower/onPi/install/local_setup.bash")
+   "/home/alfonso/Line_follower/onPi/install/setup.bash;/home/alfonso/Line_follower/onPi/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/Line_follower/onPi/install" TYPE FILE FILES
-    "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/setup.bash"
-    "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/alfonso/Line_follower/onPi/install" TYPE FILE FILES
+    "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/setup.bash"
+    "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/Line_follower/onPi/install/setup.sh;/home/pi/Line_follower/onPi/install/local_setup.sh")
+   "/home/alfonso/Line_follower/onPi/install/setup.sh;/home/alfonso/Line_follower/onPi/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/Line_follower/onPi/install" TYPE FILE FILES
-    "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/setup.sh"
-    "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/alfonso/Line_follower/onPi/install" TYPE FILE FILES
+    "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/setup.sh"
+    "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/Line_follower/onPi/install/setup.zsh;/home/pi/Line_follower/onPi/install/local_setup.zsh")
+   "/home/alfonso/Line_follower/onPi/install/setup.zsh;/home/alfonso/Line_follower/onPi/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/Line_follower/onPi/install" TYPE FILE FILES
-    "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/setup.zsh"
-    "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/alfonso/Line_follower/onPi/install" TYPE FILE FILES
+    "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/setup.zsh"
+    "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/Line_follower/onPi/install/.rosinstall")
+   "/home/alfonso/Line_follower/onPi/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/Line_follower/onPi/install" TYPE FILE FILES "/home/pi/Line_follower/onPi/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/alfonso/Line_follower/onPi/install" TYPE FILE FILES "/home/alfonso/Line_follower/onPi/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pi/Line_follower/onPi/build/gtest/cmake_install.cmake")
-  include("/home/pi/Line_follower/onPi/build/toarduino/cmake_install.cmake")
-  include("/home/pi/Line_follower/onPi/build/camera/cmake_install.cmake")
-  include("/home/pi/Line_follower/onPi/build/recorder/cmake_install.cmake")
-  include("/home/pi/Line_follower/onPi/build/detector/cmake_install.cmake")
+  include("/home/alfonso/Line_follower/onPi/build/gtest/cmake_install.cmake")
+  include("/home/alfonso/Line_follower/onPi/build/toarduino/cmake_install.cmake")
+  include("/home/alfonso/Line_follower/onPi/build/camera/cmake_install.cmake")
+  include("/home/alfonso/Line_follower/onPi/build/recorder/cmake_install.cmake")
+  include("/home/alfonso/Line_follower/onPi/build/detector/cmake_install.cmake")
 
 endif()
 
@@ -146,5 +146,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pi/Line_follower/onPi/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alfonso/Line_follower/onPi/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
